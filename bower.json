@@ -4,8 +4,8 @@
   "version": "1.2.0",
   "homepage": "https://github.com/jonmiles/bootstrap-treeview",
   "main": [
-    "dist/bootstrap-treeview.min.js",
-    "dist/bootstrap-treeview.min.css"
+    "src/js/bootstrap-treeview.js",
+    "src/css/bootstrap-treeview.css"
   ],
   "keywords": [
     "twitter",
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "jquery": ">= 1.9.0",
-    "bootstrap": ">= 3.0.0"
+    "bootstrap": "3.x.x"
   },
   "devDependencies": {}
 }
