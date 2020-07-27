@@ -704,6 +704,9 @@
 		@return {Object} node - Matching node
 	*/
 	Tree.prototype.getNode = function (nodeId) {
+		if ([undefined, 'undefined', null, 'null', ''].indexOf(nodeId) > -1) {
+			return this.nodes;
+		}
 		return this.nodes[nodeId];
 	};
 
