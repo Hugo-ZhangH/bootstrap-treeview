@@ -582,7 +582,7 @@
 
 		// We never pass options when rendering, so the only time
 		// we need to validate state is from user interaction
-		if (options && (state === node.state.selected)) return;
+		if (options && (node.state && state === node.state.selected)) return;
 
 		if (state) {
 
