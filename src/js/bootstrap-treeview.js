@@ -469,7 +469,7 @@
 				if (!this._options.mustChoose ||
 				    (this._options.mustChoose && !this._options.multiSelect &&
 				     selectedNode[0] && selectedNode[0].nodeId !== node.nodeId)) {
-					this.toggleSelectedState(node, _default.options);
+					this._toggleSelected(node, $.extend({}, _default.options));
 				}
 			} else {
 				this._toggleExpanded(node, $.extend({}, _default.options));
@@ -993,10 +993,9 @@
 	Tree.prototype.getTree = function () {
 
 		var result;
-		var _this = this;
 
-		$.each(this.getNode(), function (index, item) {
-			if (!_this.getParent(item.nodeId)) {
+		$.each(this.getNodes(), function (index, item) {
+			if (!item.parentId) {
 				if (!result) {
 					result = []
 				}
