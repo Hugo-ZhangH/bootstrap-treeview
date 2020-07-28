@@ -594,6 +594,9 @@
 			}
 
 			// Set node state
+			if (!node.state) {
+				node.state = {};
+			}
 			node.state.selected = true;
 
 			// Set element
