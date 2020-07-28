@@ -987,6 +987,23 @@
 		return this._orderedNodes;
 	};
 
+	Tree.prototype.getTree = function () {
+
+		var result;
+		var _this = this;
+
+		$.each(this.getNode(), function (index, item) {
+			if (!_this.getParent(item.nodeId)) {
+				if (!result) {
+					result = []
+				}
+				result.push(item)
+			}
+		});
+
+		return result;
+	};
+
 	/**
 		Returns parent nodes for given nodes, if valid otherwise returns undefined.
 		@param {Array} nodes - An array of nodes
