@@ -57,6 +57,7 @@
 		showCheckbox: false,
 		showTags: false,
 		multiSelect: false,
+		mustChoose: false,
 		preventUnselect: false,
 
 		// Event handlers
@@ -462,7 +463,14 @@
 		}
 		else {
 			if (node.selectable) {
-				this._toggleSelected(node, $.extend({}, _default.options));
+				// this._toggleSelected(node, $.extend({}, _default.options));
+				var selectedNode = this.getSelected();
+				
+				if (!this.options.mustChoose ||
+				    (this.options.mustChoose && !this.options.multiSelect &&
+				     selectedNode[0] && selectedNode[0].nodeId !== node.nodeId)) {
+					this.toggleSelectedState(node, _default.options);
+				}
 			} else {
 				this._toggleExpanded(node, $.extend({}, _default.options));
 			}
